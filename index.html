@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人财务模拟器</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="brand-logo">
+            亍幵<span class="logo-highlight">财务</span>模拟器
+        </div>
+        <h1>个人财务模拟器</h1>
+    </header>
+    <main>
+        <section class="calculator-container">
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="retirement">退休金预测</button>
+                <button class="tab-btn" data-tab="mortgage">购房负担能力计算器</button>
+            </div>
+
+            <!-- 使用指南部分 -->
+            <div class="guide-section">
+                <h2>使用指南</h2>
+                <p>本财务模拟器提供两个核心功能：退休金预测和购房负担能力计算。请选择上方标签页切换不同功能，填写表单并点击计算按钮查看结果。</p>
+            </div>
+
+            <!-- 退休金预测计算器 -->
+            <div id="retirement" class="calculator-content active">
+                <h2>退休金预测</h2>
+                <div class="calculator-description">
+                    <p>此工具帮助您预测退休时的预期财富。通过输入您的当前财务状况和未来规划，系统会计算出财富增长路径并显示退休时的预期金额。</p>
+                </div>
+                <form id="retirement-form">
+                    <!-- 输入字段将在这里添加 -->
+                    <div class="form-group">
+                        <label for="current-age">当前年龄</label>
+                        <input type="number" id="current-age" min="18" max="100" required>
+                    </div>
+                    <!-- 其他输入字段... -->
+                    <button type="submit">计算</button>
+                </form>
+                <div class="results">
+                    <div class="chart-container">
+                        <canvas id="retirement-chart"></canvas>
+                    </div>
+                    <div class="summary"></div>
+                </div>
+            </div>
+
+            <!-- 购房负担能力计算器 -->
+            <div id="mortgage" class="calculator-content">
+                <h2>购房负担能力计算器</h2>
+                <div class="calculator-description">
+                    <p>此工具帮助您评估可负担的房价范围和月供明细。基于您的收入、存款和贷款条件，系统会计算出合理的购房预算和每月还款金额。</p>
+                </div>
+                <form id="mortgage-form">
+                    <!-- 输入字段将在这里添加 -->
+                    <div class="form-group">
+                        <label for="income">年收入</label>
+                        <input type="number" id="income" min="0" required>
+                    </div>
+                    <!-- 其他输入字段... -->
+                    <button type="submit">计算</button>
+                </form>
+                <div class="results">
+                    <div class="chart-container">
+                        <canvas id="mortgage-chart"></canvas>
+                    </div>
+                    <div class="summary"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>个人财务模拟器 &copy; 2023</p>
+        <div class="developer-info">
+            <div class="developer-item">
+                <span class="developer-label">设计者:</span> 亍幵
+            </div>
+            <div class="developer-item">
+                <span class="developer-label">开发者:</span> 亍幵
+            </div>
+        </div>
+    </footer>
+    <script src="js/retirement-calculator.js"></script>
+    <script src="js/mortgage-calculator.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
